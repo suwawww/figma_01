@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          # 删除了 cache: 'npm' 这一行，避免找不到 lock 文件报错
       - name: Install dependencies
         run: npm install
       - name: Build
