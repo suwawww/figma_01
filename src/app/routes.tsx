@@ -13,6 +13,7 @@ import { NotFoundPage } from "./pages/not-found";
 import { ArticleDetailPage } from "./pages/article-detail";
 import { AccountFamilyPage } from "./pages/account-family";
 import { ActivityDetailPage } from "./pages/activity-detail";
+import { MedicineDetailPage } from "./pages/medicine-detail";
 
 export const router = createHashRouter([
   {
@@ -31,6 +32,7 @@ export const router = createHashRouter([
       { path: "online-consultation", element: <OnlineConsultationPage /> },
       { path: "consultation-selection", element: <ConsultationSelectionPage /> },
       { path: "medicine-box", element: <MedicineBoxPage /> },
+      { path: "medicine-box/:id", element: <MedicineDetailPage /> },
       { path: "community-activities", element: <CommunityActivitiesPage /> },
       { path: "community-activities/:id", element: <ActivityDetailPage /> },
       { path: "account-family", element: <AccountFamilyPage /> },
