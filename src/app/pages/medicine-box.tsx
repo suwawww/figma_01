@@ -36,7 +36,7 @@ const initialMedicines = [
     expiry: "2026-12-30",
     category: "消炎解毒",
     type: "处方药",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&q=80",
+    image: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/5-1.png",
     reminders: ["08:00", "12:00", "18:00"]
   },
   {
@@ -49,7 +49,7 @@ const initialMedicines = [
     expiry: "2026-05-15",
     category: "解热镇痛",
     type: "OTC",
-    image: "https://images.unsplash.com/photo-1576073719710-aa5e3f36402d?w=400&q=80",
+    image: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/5-2.png",
     reminders: []
   },
   {
@@ -62,7 +62,7 @@ const initialMedicines = [
     expiry: "2027-02-10",
     category: "慢病用药",
     type: "处方药",
-    image: "https://images.unsplash.com/photo-1471864190281-ad5f9f8162e6?w=400&q=80",
+    image: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/5-3.png",
     reminders: ["21:00"]
   },
   {
@@ -75,7 +75,7 @@ const initialMedicines = [
     expiry: "2026-08-20",
     category: "营养补充",
     type: "保健品",
-    image: "https://images.unsplash.com/photo-1616671285442-70b925b33100?w=400&q=80",
+    image: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/5-4.png",
     reminders: ["10:00"]
   }
 ];

@@ -35,6 +35,9 @@ import { motion as Motion, AnimatePresence } from "motion/react";
 import { Popover, PopoverContent, PopoverTrigger } from "../components/ui/popover";
 import { Badge } from "../components/ui/badge";
 
+// AI Sphere Image
+const AISphereImg = "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/ai-sphere.png";
+
 const healthStats = [
   {
     title: "今日步数",
@@ -256,26 +259,125 @@ export function HomePage() {
                 <Phone className="w-5 h-5 mr-3 animate-bounce" />
                 一键呼救 (SOS)
               </Button>
-              <Button 
-                variant="outline" 
-                className="border-white/30 bg-white/10 text-white hover:bg-white hover:text-indigo-600 h-14 px-10 rounded-2xl font-bold backdrop-blur-xl group transition-all"
-              >
-                <Calendar className="w-5 h-5 mr-3" />
-                预约挂号
-              </Button>
-            </Motion.div>
+                          </Motion.div>
           </div>
 
           <div className="lg:col-span-2 hidden lg:block">
-            <div className="relative group">
-              <div className="absolute inset-0 bg-white/20 blur-2xl rounded-full scale-90 group-hover:scale-100 transition-transform" />
-              <div className="relative rounded-[2.5rem] overflow-hidden border-8 border-white/20 shadow-2xl rotate-2 group-hover:rotate-0 transition-all duration-500">
-                <ImageWithFallback 
-                  src="https://images.unsplash.com/photo-1758691463393-a2aa9900af8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmcmllbmRseSUyMGZhbWlseSUyMGRvY3RvciUyMHNtaWxpbmd8ZW58MXx8fHwxNzc1MDEwMzI2fDA&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Friendly Doctor"
-                  className="w-full h-80 object-cover"
+            <div className="relative group flex items-center justify-center">
+              {/* 背景辉光动画 - 调亮后的浅蓝色系 */}
+              <Motion.div 
+                animate={{ 
+                  scale: [1, 1.4, 1],
+                  opacity: [0.3, 0.5, 0.3],
+                }}
+                transition={{ 
+                  duration: 4, 
+                  repeat: Infinity,
+                  ease: "easeInOut" 
+                }}
+                className="absolute w-80 h-80 bg-indigo-300/40 blur-[70px] rounded-full" 
+              />
+              
+              {/* AI 智能球主体 */}
+              <Motion.div
+                animate={{ 
+                  y: [-12, 12, -12],
+                }}
+                transition={{ 
+                  duration: 5, 
+                  repeat: Infinity,
+                  ease: "easeInOut" 
+                }}
+                className="relative z-10"
+              >
+                {/* 球体外壳 - 浅 Indigo 与 磨砂白渐变 */}
+                <div className="relative w-64 h-64 rounded-full bg-gradient-to-br from-indigo-100/40 via-white/20 to-indigo-400/30 backdrop-blur-3xl border border-white/60 shadow-[0_0_60px_rgba(165,180,252,0.4)] flex items-center justify-center overflow-hidden group-hover:shadow-[0_0_90px_rgba(165,180,252,0.6)] transition-all duration-700">
+                  
+                  {/* 内部微光装饰 */}
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.4)_0%,transparent_60%)]" />
+                  
+                  {/* AI 智能眼睛 - 核心左右扫视交互 */}
+                  <Motion.div 
+                    animate={{ 
+                      x: [-25, 25, -25], // 眼睛左右扫视
+                    }}
+                    transition={{ 
+                      duration: 8, 
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      times: [0, 0.5, 1]
+                    }}
+                    className="flex items-center gap-5 z-20"
+                  >
+                    {/* 左眼 */}
+                    <Motion.div 
+                      animate={{ 
+                        scaleY: [1, 1, 0.1, 1, 1], // 眨眼
+                        height: [28, 36, 28],      // 呼吸
+                        boxShadow: [
+                          "0 0 10px rgba(255,255,255,0.9)",
+                          "0 0 25px rgba(129,140,248,1)",
+                          "0 0 10px rgba(255,255,255,0.9)"
+                        ]
+                      }}
+                      transition={{ 
+                        duration: 4, 
+                        repeat: Infinity,
+                        times: [0, 0.45, 0.5, 0.55, 1],
+                        ease: "easeInOut" 
+                      }}
+                      className="w-3.5 h-8 bg-white rounded-full"
+                    />
+                    {/* 右眼 */}
+                    <Motion.div 
+                      animate={{ 
+                        scaleY: [1, 1, 0.1, 1, 1], 
+                        height: [28, 36, 28],
+                        boxShadow: [
+                          "0 0 10px rgba(255,255,255,0.9)",
+                          "0 0 25px rgba(129,140,248,1)",
+                          "0 0 10px rgba(255,255,255,0.9)"
+                        ]
+                      }}
+                      transition={{ 
+                        duration: 4, 
+                        repeat: Infinity,
+                        times: [0, 0.45, 0.5, 0.55, 1],
+                        ease: "easeInOut" 
+                      }}
+                      className="w-3.5 h-8 bg-white rounded-full"
+                    />
+                  </Motion.div>
+
+                  {/* 旋转装饰光圈 */}
+                  <Motion.div 
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                    className="absolute inset-6 border border-white/20 rounded-full border-t-indigo-500/40 border-l-transparent"
+                  />
+                  
+                  {/* 表面柔光横扫 */}
+                  <Motion.div 
+                    animate={{ x: [-350, 350] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "linear", repeatDelay: 2 }}
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"
+                  />
+                </div>
+                
+                {/* 底部悬浮柔影 */}
+                <Motion.div 
+                  animate={{ 
+                    scale: [0.8, 1.1, 0.8],
+                    opacity: [0.15, 0.3, 0.15],
+                  }}
+                  transition={{ 
+                    duration: 5, 
+                    repeat: Infinity,
+                    ease: "easeInOut" 
+                  }}
+                  className="absolute -bottom-14 left-1/2 -translate-x-1/2 w-48 h-8 bg-indigo-900/10 blur-3xl rounded-full"
                 />
-              </div>
+              </Motion.div>
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import { Input } from "../components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "../components/ui/dialog";
 import { toast } from "sonner";
+import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import {
   Users,
   UserPlus,
@@ -43,7 +44,7 @@ const familyMembers = [
     phone: "138-0000-0001",
     healthStatus: "正常",
     lastCheckup: "2026-03-15",
-    avatar: "W",
+    avatar: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/08.png",
     color: "bg-indigo-600"
   },
   {
@@ -54,7 +55,7 @@ const familyMembers = [
     phone: "138-0000-0002",
     healthStatus: "需关注",
     lastCheckup: "2026-02-20",
-    avatar: "L",
+    avatar: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/07.png",
     color: "bg-emerald-600"
   },
   {
@@ -65,7 +66,7 @@ const familyMembers = [
     phone: "-",
     healthStatus: "良好",
     lastCheckup: "2026-01-10",
-    avatar: "M",
+    avatar: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/10.png",
     color: "bg-amber-600"
   },
 ];
@@ -201,8 +202,8 @@ export function MemberManagementPage() {
                   >
                     <Card className="p-8 border-slate-200/50 hover:border-indigo-200 hover:shadow-2xl hover:shadow-indigo-500/5 transition-all group overflow-hidden relative rounded-[2.5rem] bg-white">
                       <div className="flex items-start gap-5 mb-8 relative z-10">
-                        <div className={`w-16 h-16 rounded-2xl ${member.color} flex items-center justify-center text-white font-black text-2xl shadow-xl shadow-indigo-100 group-hover:scale-110 transition-transform`}>
-                          {member.avatar}
+                        <div className={`w-16 h-16 rounded-2xl ${member.color} overflow-hidden flex items-center justify-center shadow-xl shadow-indigo-100 group-hover:scale-110 transition-transform`}>
+                          <ImageWithFallback src={member.avatar} alt={member.name} className="w-full h-full object-cover" />
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1.5">

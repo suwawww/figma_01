@@ -36,7 +36,7 @@ export function ConsultationSelectionPage() {
       cases: "1200+", 
       price: 29, 
       status: "online",
-      avatar: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=200"
+      avatar: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/4-2.png"
     },
     { 
       id: 2, 
@@ -48,7 +48,7 @@ export function ConsultationSelectionPage() {
       cases: "850+", 
       price: 19, 
       status: "online",
-      avatar: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=200"
+      avatar: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/4-1.png"
     },
     { 
       id: 3, 
@@ -60,7 +60,19 @@ export function ConsultationSelectionPage() {
       cases: "2100+", 
       price: 25, 
       status: "busy",
-      avatar: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=200"
+      avatar: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/4-3.png"
+    },
+    { 
+      id: 4, 
+      name: "赵晓云", 
+      title: "主治医师", 
+      dept: "消化内科", 
+      hospital: "社区医疗中心", 
+      rating: 4.8, 
+      cases: "650+", 
+      price: 22, 
+      status: "online",
+      avatar: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/4-4.png"
     }
   ];
 
@@ -177,7 +189,11 @@ export function ConsultationSelectionPage() {
                   <div className="flex items-center gap-6 relative z-10">
                     <div className="relative">
                       <div className="w-20 h-20 rounded-2xl overflow-hidden shadow-lg border-2 border-white">
-                        <img src={doc.avatar} alt={doc.name} className="w-full h-full object-cover" />
+                        <img 
+                          src={doc.avatar} 
+                          alt={doc.name} 
+                          className="w-full h-full object-cover" 
+                        />
                       </div>
                       <div className={`absolute -bottom-1 -right-1 w-4 h-4 rounded-full border-2 border-white ${doc.status === "online" ? "bg-green-500" : "bg-orange-500"}`} />
                     </div>

@@ -31,7 +31,7 @@ const medicalTeam = [
     rating: 4.9,
     phone: "138-0000-1001",
     email: "liming@medical.com",
-    image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwdGVhbSUyMGRvY3RvcnN8ZW58MXx8fHwxNzc0ODY0OTEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/4-2.png",
     available: true,
   },
   {
@@ -43,7 +43,7 @@ const medicalTeam = [
     rating: 4.8,
     phone: "138-0000-1002",
     email: "chenjing@medical.com",
-    image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwdGVhbSUyMGRvY3RvcnN8ZW58MXx8fHwxNzc0ODY0OTEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/4-1.png",
     available: true,
   },
   {
@@ -55,7 +55,7 @@ const medicalTeam = [
     rating: 4.7,
     phone: "138-0000-1003",
     email: "zhangwei@medical.com",
-    image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwdGVhbSUyMGRvY3RvcnN8ZW58MXx8fHwxNzc0ODY0OTEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/4-3.png",
     available: false,
   },
   {
@@ -67,7 +67,7 @@ const medicalTeam = [
     rating: 5.0,
     phone: "138-0000-1004",
     email: "wangfang@medical.com",
-    image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwdGVhbSUyMGRvY3RvcnN8ZW58MXx8fHwxNzc0ODY0OTEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/4-4.png",
     available: true,
   },
 ];
@@ -144,7 +144,7 @@ export function MedicalNetworkPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-            医疗网络
+            社区医疗服务
           </h1>
           <p className="text-muted-foreground mt-1">专业医疗团队为您服务</p>
         </div>

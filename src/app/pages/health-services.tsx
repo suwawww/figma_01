@@ -241,32 +241,45 @@ export function HealthServicesPage() {
               >
                 <Card className="p-8 border-slate-200/50 hover:shadow-2xl hover:shadow-indigo-500/5 transition-all group cursor-pointer relative overflow-hidden rounded-[2.5rem] bg-white">
                   {item.isNew && (
-                    <div className="absolute top-0 right-0">
+                    <div className="absolute top-0 right-0 z-10">
                       <div className="bg-rose-500 text-white text-[9px] font-black px-4 py-1.5 rounded-bl-2xl shadow-lg uppercase tracking-widest">
                         New
                       </div>
                     </div>
                   )}
-                  <div className="flex flex-col gap-6">
-                    <div className="flex items-center gap-4">
-                      <Badge className="bg-indigo-50 text-indigo-600 hover:bg-indigo-100 border-none font-black text-[10px] px-3 py-1 rounded-lg uppercase tracking-widest">
-                        {item.tag}
-                      </Badge>
-                      <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">{item.date}</span>
+                  <div className="flex flex-col md:flex-row gap-8 items-center">
+                    <div className="flex-1 flex flex-col gap-6 order-2 md:order-1">
+                      <div className="flex items-center gap-4">
+                        <Badge className="bg-indigo-50 text-indigo-600 hover:bg-indigo-100 border-none font-black text-[10px] px-3 py-1 rounded-lg uppercase tracking-widest">
+                          {item.tag}
+                        </Badge>
+                        <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">{item.date}</span>
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-extrabold text-slate-900 group-hover:text-indigo-600 transition-colors mb-3 tracking-tight">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm font-medium text-slate-500 leading-relaxed max-w-2xl">
+                          {item.desc}
+                        </p>
+                      </div>
+                      <div className="pt-2">
+                        <Button variant="link" className="p-0 h-auto text-indigo-600 font-extrabold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
+                          了解详情
+                          <ChevronRight className="w-4 h-4" />
+                        </Button>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-2xl font-extrabold text-slate-900 group-hover:text-indigo-600 transition-colors mb-3 tracking-tight">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm font-medium text-slate-500 leading-relaxed max-w-2xl">
-                        {item.desc}
-                      </p>
-                    </div>
-                    <div className="pt-2">
-                      <Button variant="link" className="p-0 h-auto text-indigo-600 font-extrabold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
-                        了解详情
-                        <ChevronRight className="w-4 h-4" />
-                      </Button>
+                    <div className="w-full md:w-56 h-40 md:h-36 shrink-0 rounded-3xl overflow-hidden border border-slate-100 shadow-sm order-1 md:order-2">
+                      <ImageWithFallback 
+                        src={[
+                          "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/7-1.png",
+                          "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/7-2.png",
+                          "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/7-3.png"
+                        ][i % 3]} 
+                        alt={item.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
                     </div>
                   </div>
                 </Card>

@@ -111,7 +111,7 @@ export function HealthProfilePage() {
               <div className="relative mb-6">
                 <div className="w-28 h-28 rounded-[2.5rem] border-4 border-white shadow-xl mx-auto overflow-hidden bg-slate-100 rotate-3 group-hover:rotate-0 transition-transform duration-500">
                   <img 
-                    src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=300" 
+                    src="https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/08.png" 
                     alt="Profile" 
                     className="w-full h-full object-cover"
                   />

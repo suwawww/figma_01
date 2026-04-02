@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import { Card } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
@@ -44,8 +45,8 @@ const knowledgeArticles = [
     readTime: "5分钟",
     views: 3456,
     likes: 234,
-    image: "https://images.unsplash.com/photo-1669165266608-5aa72f61303b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGglMjBrbm93bGVkZ2UlMjBlZHVjYXRpb258ZW58MXx8fHwxNzc0OTQ2NTYzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    summary: "高血压是常见的慢性疾病，通过规范的生活方式和科学用药可以有效控制血压...",
+    image: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/8-1.png",
+    summary: "高血压是常见的慢性疾病，通过规范的生活方式 and 科学用药可以有效控制血压...",
     featured: true,
   },
   {
@@ -57,7 +58,7 @@ const knowledgeArticles = [
     readTime: "8分钟",
     views: 2890,
     likes: 189,
-    image: "https://images.unsplash.com/photo-1669165266608-5aa72f61303b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGglMjBrbm93bGVkZ2UlMjBlZHVjYXRpb258ZW58MXx8fHwxNzc0OTQ2NTYzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/8-3.png",
     summary: "现代生活节奏快，工作压力大，学会自我调节和心理疏导非常重要...",
     featured: false,
   },
@@ -70,7 +71,7 @@ const knowledgeArticles = [
     readTime: "6分钟",
     views: 4123,
     likes: 312,
-    image: "https://images.unsplash.com/photo-1669165266608-5aa72f61303b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGglMjBrbm93bGVkZ2UlMjBlZHVjYXRpb258ZW58MXx8fHwxNzc0OTQ2NTYzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/8-2.png",
     summary: "营养均衡的饮食是健康的基础，本文详细介绍如何科学安排一日三餐...",
     featured: true,
   },
@@ -83,7 +84,7 @@ const knowledgeArticles = [
     readTime: "7分钟",
     views: 2456,
     likes: 178,
-    image: "https://images.unsplash.com/photo-1669165266608-5aa72f61303b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGglMjBrbm93bGVkZ2UlMjBlZHVjYXRpb258ZW58MXx8fHwxNzc0OTQ2NTYzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/8-4.png",
     summary: "中老年人需要选择适合自己年龄和身体状况的运动方式来保持健康...",
     featured: false,
   },
@@ -96,7 +97,7 @@ const knowledgeArticles = [
     readTime: "10分钟",
     views: 3789,
     likes: 256,
-    image: "https://images.unsplash.com/photo-1669165266608-5aa72f61303b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGglMjBrbm93bGVkZ2UlMjBlZHVjYXRpb258ZW58MXx8fHwxNzc0OTQ2NTYzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/8-5.png",
     summary: "正确用药是治疗疾病的关键，了解药物的使用时间、剂量和注意事项...",
     featured: false,
   },
@@ -109,7 +110,7 @@ const knowledgeArticles = [
     readTime: "6分钟",
     views: 2134,
     likes: 145,
-    image: "https://images.unsplash.com/photo-1669165266608-5aa72f61303b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGglMjBrbm93bGVkZ2UlMjBlZHVjYXRpb258ZW58MXx8fHwxNzc0OTQ2NTYzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/8-6.png",
     summary: "春季是儿童呼吸道疾病高发期，家长应该了解预防措施和护理方法...",
     featured: false,
   },
@@ -142,6 +143,7 @@ const videoTutorials = [
 export function HealthKnowledgePage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const navigate = useNavigate();
 
   const filteredArticles = knowledgeArticles.filter((article) => {
     const matchesSearch =
@@ -223,7 +225,8 @@ export function HealthKnowledgePage() {
                 {featuredArticles.map((article) => (
                   <Card
                     key={article.id}
-                    className="overflow-hidden hover:shadow-xl transition-shadow border-blue-100 group cursor-pointer"
+                    onClick={() => navigate(`/dashboard/health-knowledge/article/${article.id}`)}
+                    className="overflow-hidden hover:shadow-xl transition-all border-blue-100 group cursor-pointer hover:-translate-y-1"
                   >
                     <div className="relative h-56 overflow-hidden">
                       <ImageWithFallback
@@ -276,7 +279,8 @@ export function HealthKnowledgePage() {
                 {regularArticles.map((article) => (
                   <Card
                     key={article.id}
-                    className="overflow-hidden hover:shadow-lg transition-shadow border-blue-100 group cursor-pointer"
+                    onClick={() => navigate(`/dashboard/health-knowledge/article/${article.id}`)}
+                    className="overflow-hidden hover:shadow-lg transition-all border-blue-100 group cursor-pointer hover:-translate-y-1"
                   >
                     <div className="relative h-48 overflow-hidden">
                       <ImageWithFallback

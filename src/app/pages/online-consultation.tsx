@@ -89,7 +89,7 @@ export function OnlineConsultationPage() {
             <div className="relative w-24 h-24 mx-auto mb-4">
               <div className="w-full h-full rounded-full border-2 border-blue-100 overflow-hidden bg-slate-100 shadow-xl shadow-blue-900/5">
                 <img 
-                  src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=200" 
+                  src="https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/4-2.png" 
                   alt="Doctor" 
                   className="w-full h-full object-cover"
                 />
@@ -238,7 +238,7 @@ export function OnlineConsultationPage() {
                   <div className={`flex gap-3 max-w-[80%] ${msg.role === "doctor" ? "flex-row" : "flex-row-reverse"}`}>
                     <div className={`w-9 h-9 rounded-full overflow-hidden shrink-0 border-2 ${msg.role === "doctor" ? "border-blue-100" : "border-slate-100 shadow-sm bg-white flex items-center justify-center text-blue-600"}`}>
                       {msg.role === "doctor" ? (
-                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=100" alt="Avatar" className="w-full h-full object-cover" />
+                        <img src="https://raw.githubusercontent.com/suwawww/photo_box/refs/heads/main/4-2.png" alt="Avatar" className="w-full h-full object-cover" />
                       ) : (
                         <User className="w-5 h-5" />
                       )}
